@@ -1,36 +1,32 @@
-# ds-project-template
+# First EDA project
 
-Template for creating ds simple projects
+This repository contains the results of my first Exploratory Data Analysis (EDA) project, while attending the neuefische Data Science Bootcamp.
 
-## Requirements
+## Data
+For this task we were given a data set containing records of house sales in King County, near Seattle. It included house prices, date it was sold, size of lot/living space, average lot/living space nearby, latitude and longitude, etc.
 
-- pyenv
-- python==3.9.8
+## Task
+As described in [assignment.md](assignment.md):
+1. Create a new repo using this [template](hhttps://github.com/neuefische/ds-eda-project-template).
 
-## Setup
+2. Through EDA/statistical analysis above please come up with **AT LEAST 3 insights** regarding the overall data. One should be geographical.
 
-One of the first steps when starting any data science project is to create a virtual environment. For this project you have to create this environment from scratch yourself. However, you should be already familiar with the commands you will need to do so. The general workflow consists of... 
+3. In addition also come up with **AT LEAST 3 recommendations** for your stakeholder.
 
-* setting the python version locally to 3.9.8
-* creating a virtual environment using the `venv` module
-* activating your newly created environment 
-* upgrading `pip` (This step is not absolutely necessary, but will save you trouble when installing some packages.)
-* installing the required packages via `pip`
+## Virtual Environment
 
-At the end, you want to make sure that people who are interested in your project can create an identical environment on their own computer in order to be able to run your code without running into errors. Therefore you can create a `requirements file` and add it to your repository. You can create such a file by running the following command: 
+Modified [requirements.txt](requirements.txt) file from ds-visualization repository. Essentially removed SQL packages. 
 
-```bash
-pip freeze > requirements.txt
+To install the environment, ran the following commands:
+
+```Bash
+pyenv local 3.9.8
+python -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
 ```
 
-*Note: In rare case such a requirements file created with `pip freeze` might not ensure that another (especially M1 chip) user can install and execute it properly. This can happen if libraries need to be compiled (e.g. SciPy). Then it also depends on environment variables and the actual system libraries.*
+## Results
 
-### Unit testing (Optional)
-
-If you write python scripts for your data processing methods, you can also write unit tests. In order to run the tests execute in terminal:
-
-```bash
-pytest
-```
-
-This command will execute all the functions in your project that start with the word **test**.
+A detailed description of my analysis is found in [EDA.ipynb](EDA.ipynb), and the slides for my presentation to the stakeholder is found in [EDA_project_neuefische.pdf](EDA_project_neuefische.pdf).
